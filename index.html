@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="答题器">
+<meta name="theme-color" content="#6366f1">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZzEiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNjM2NmYxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzM4YmRmOCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDAiIGZpbGw9InVybCgjZzEpIi8+CiAgPHRleHQgeD0iMjU2IiB5PSIzNDAiIGZvbnQtc2l6ZT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXBwbGUgQ29sb3IgRW1vamksU2Vnb2UgVUkgRW1vamkiPvCfp6A8L3RleHQ+Cjwvc3ZnPg==">
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjogIuS4reWkruS4gOWPt+aWh+S7tuetlOmimOWZqCIsICJzaG9ydF9uYW1lIjogIuetlOmimOWZqCIsICJkZXNjcmlwdGlvbiI6ICIyMDI25bm05Lit5aSu5LiA5Y+35paH5Lu255+l6K+G56ue562UIiwgInN0YXJ0X3VybCI6ICIuL2luZGV4Lmh0bWwiLCAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwgImJhY2tncm91bmRfY29sb3IiOiAiIzBmMTcyYSIsICJ0aGVtZV9jb2xvciI6ICIjNjM2NmYxIiwgIm9yaWVudGF0aW9uIjogInBvcnRyYWl0IiwgImxhbmciOiAiemgtQ04iLCAiaWNvbnMiOiBbeyJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOXpkbWNpSUhacFpYZENiM2c5SWpBZ01DQTFNVElnTlRFeUlqNEtJQ0E4WkdWbWN6NEtJQ0FnSUR4c2FXNWxZWEpIY21Ga2FXVnVkQ0JwWkQwaVp6RWlJSGd4UFNJd0pTSWdlVEU5SWpBbElpQjRNajBpTVRBd0pTSWdlVEk5SWpFd01DVWlQZ29nSUNBZ0lDQThjM1J2Y0NCdlptWnpaWFE5SWpBbElpQnpkSGxzWlQwaWMzUnZjQzFqYjJ4dmNqb2pOak0yTm1ZeElpOCtDaUFnSUNBZ0lEeHpkRzl3SUc5bVpuTmxkRDBpTVRBd0pTSWdjM1I1YkdVOUluTjBiM0F0WTI5c2IzSTZJek00WW1SbU9DSXZQZ29nSUNBZ1BDOXNhVzVsWVhKSGNtRmthV1Z1ZEQ0S0lDQThMMlJsWm5NK0NpQWdQSEpsWTNRZ2QybGtkR2c5SWpVeE1pSWdhR1ZwWjJoMFBTSTFNVElpSUhKNFBTSXhNREFpSUdacGJHdzlJblZ5YkNnalp6RXBJaTgrQ2lBZ1BIUmxlSFFnZUQwaU1qVTJJaUI1UFNJek5EQWlJR1p2Ym5RdGMybDZaVDBpTWpnd0lpQjBaWGgwTFdGdVkyaHZjajBpYldsa1pHeGxJaUJtYjI1MExXWmhiV2xzZVQwaVFYQndiR1VnUTI5c2IzSWdSVzF2YW1rc1UyVm5iMlVnVlVrZ1JXMXZhbWtpUHZDZnA2QThMM1JsZUhRK0Nqd3ZjM1puUGc9PSIsICJzaXplcyI6ICJhbnkiLCAidHlwZSI6ICJpbWFnZS9zdmcreG1sIiwgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIn1dfQ==">
+<title>🧠 中央一号文件知识答题器</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{min-height:100vh;background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#0f172a 100%);font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;color:#f1f5f9;padding-bottom:env(safe-area-inset-bottom);}
+.header{background:rgba(99,102,241,0.12);border-bottom:1px solid rgba(99,102,241,0.25);padding:16px 0;text-align:center;}
+.header-title{font-size:26px;font-weight:800;letter-spacing:2px;background:linear-gradient(90deg,#818cf8,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.header-sub{font-size:13px;color:#94a3b8;margin-top:3px;}
+.save-tip{font-size:11px;color:#10b981;margin-top:2px;height:16px;transition:opacity 0.4s;opacity:0;}
+.save-tip.show{opacity:1;}
+.tabs{display:flex;justify-content:center;gap:6px;padding:14px 8px 0;flex-wrap:wrap;}
+.tab-btn{padding:8px 16px;border-radius:50px;border:none;cursor:pointer;font-size:13px;font-weight:600;transition:all 0.2s;background:rgba(255,255,255,0.06);color:#94a3b8;}
+.tab-btn.active{background:linear-gradient(90deg,#6366f1,#38bdf8);color:#fff;box-shadow:0 4px 20px rgba(99,102,241,0.4);}
+.container{max-width:700px;margin:0 auto;padding:20px 16px 80px;}
+.card{background:rgba(255,255,255,0.04);border-radius:18px;padding:24px;border:1px solid rgba(99,102,241,0.2);margin-bottom:14px;}
+.card-title{font-size:18px;font-weight:700;margin-bottom:20px;color:#e2e8f0;}
+.btn-primary{width:100%;padding:13px;border-radius:12px;border:none;cursor:pointer;font-size:15px;font-weight:700;background:linear-gradient(90deg,#6366f1,#38bdf8);color:#fff;box-shadow:0 4px 18px rgba(99,102,241,0.4);transition:opacity 0.2s;}
+.btn-primary:hover{opacity:0.9;}
+.btn-tag{padding:6px 14px;border-radius:50px;border:1px solid rgba(99,102,241,0.3);cursor:pointer;font-size:12px;background:transparent;color:#94a3b8;transition:all 0.2s;}
+.btn-tag.active{background:linear-gradient(90deg,#6366f1,#818cf8);color:#fff;border-color:transparent;}
+.progress-bar{background:rgba(255,255,255,0.06);border-radius:4px;height:5px;overflow:hidden;margin-bottom:16px;}
+.progress-fill{height:100%;background:linear-gradient(90deg,#6366f1,#38bdf8);transition:width 0.4s;}
+.option-btn{width:100%;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:#cbd5e1;font-size:14px;text-align:left;cursor:pointer;display:flex;align-items:center;gap:10px;margin-bottom:9px;transition:all 0.2s;}
+.option-btn:hover:not(:disabled){background:rgba(99,102,241,0.12);border-color:rgba(99,102,241,0.4);}
+.option-btn.correct{background:rgba(16,185,129,0.15)!important;border-color:#10b981!important;color:#6ee7b7!important;}
+.option-btn.wrong{background:rgba(239,68,68,0.15)!important;border-color:#ef4444!important;color:#fca5a5!important;}
+.option-letter{width:27px;height:27px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.explanation{margin-top:12px;background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.2);border-radius:10px;padding:12px 14px;font-size:13px;color:#7dd3fc;line-height:1.7;}
+.q-card{background:rgba(255,255,255,0.05);border-radius:14px;padding:20px 22px;margin-bottom:16px;border:1px solid rgba(99,102,241,0.2);}
+.cat-badge{font-size:11px;color:#38bdf8;background:rgba(56,189,248,0.1);padding:3px 10px;border-radius:50px;display:inline-block;}
+.input-field{width:100%;padding:10px 13px;border-radius:10px;border:1px solid rgba(99,102,241,0.3);background:rgba(255,255,255,0.05);color:#f1f5f9;font-size:14px;outline:none;}
+.input-field::placeholder{color:#475569;}
+.textarea-field{width:100%;padding:10px 13px;border-radius:10px;border:1px solid rgba(99,102,241,0.3);background:rgba(255,255,255,0.05);color:#f1f5f9;font-size:14px;outline:none;resize:vertical;font-family:inherit;}
+label{font-size:12px;color:#94a3b8;display:block;margin-bottom:5px;}
+.form-group{margin-bottom:16px;}
+.alert-success{background:rgba(16,185,129,0.15);border:1px solid #10b981;border-radius:10px;padding:11px 15px;margin-bottom:14px;color:#6ee7b7;font-size:13px;}
+.alert-error{background:rgba(239,68,68,0.15);border:1px solid #ef4444;border-radius:10px;padding:11px 15px;margin-bottom:14px;color:#fca5a5;font-size:13px;}
+.cat-manage-item{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.04);border-radius:10px;padding:10px 14px;margin-bottom:7px;border:1px solid rgba(99,102,241,0.15);}
+.btn-danger{background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.3);color:#fca5a5;padding:4px 11px;border-radius:8px;cursor:pointer;font-size:12px;transition:all 0.2s;}
+.btn-danger:hover{background:rgba(239,68,68,0.3);}
+.btn-secondary{background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);color:#a5b4fc;padding:8px 16px;border-radius:10px;cursor:pointer;font-size:13px;transition:all 0.2s;}
+.btn-secondary:hover{background:rgba(99,102,241,0.3);}
+.quick-cats{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px;}
+.quick-cat-chip{padding:4px 12px;border-radius:50px;font-size:12px;cursor:pointer;background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);color:#a5b4fc;transition:all 0.2s;}
+.quick-cat-chip:hover{background:rgba(99,102,241,0.35);color:#fff;}
+.quick-cat-chip.qc-active{background:linear-gradient(90deg,#6366f1,#818cf8);color:#fff;border-color:transparent;}
+/* Finish view toggle */
+.view-toggle{display:flex;gap:6px;justify-content:center;margin-bottom:16px;flex-wrap:wrap;}
+.view-toggle-btn{padding:7px 16px;border-radius:50px;border:1px solid rgba(99,102,241,0.3);cursor:pointer;font-size:12px;font-weight:600;transition:all 0.2s;background:transparent;color:#94a3b8;}
+.view-toggle-btn.active{background:linear-gradient(90deg,#6366f1,#818cf8);color:#fff;border-color:transparent;}
+.hidden{display:none!important;}
+.sep{height:1px;background:rgba(255,255,255,0.06);margin:14px 0;}
+.qbank-item{background:rgba(255,255,255,0.04);border-radius:12px;padding:16px 18px;border:1px solid rgba(99,102,241,0.15);margin-bottom:10px;}
+.opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
+.opt-cell{font-size:12px;padding:6px 10px;border-radius:7px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#94a3b8;display:flex;align-items:center;gap:5px;}
+.opt-cell.correct-opt{background:rgba(16,185,129,0.12);border-color:rgba(16,185,129,0.3);color:#6ee7b7;}
+.nav-row{display:flex;gap:8px;margin-top:14px;}
+.btn-nav{flex:1;padding:12px;border-radius:12px;border:none;cursor:pointer;font-size:14px;font-weight:700;transition:all 0.2s;}
+.btn-nav-prev{background:rgba(255,255,255,0.06);color:#94a3b8;border:1px solid rgba(255,255,255,0.12);}
+.btn-nav-prev:hover{background:rgba(255,255,255,0.1);}
+.btn-nav-next{background:linear-gradient(90deg,#6366f1,#38bdf8);color:#fff;box-shadow:0 4px 14px rgba(99,102,241,0.35);}
+/* Answer sheet */
+.answer-sheet-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(48px,1fr));gap:8px;margin-bottom:14px;}
+.as-cell{aspect-ratio:1;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:700;cursor:pointer;transition:all 0.2s;border:2px solid transparent;}
+.as-cell.as-correct{background:rgba(16,185,129,0.2);border-color:#10b981;color:#6ee7b7;}
+.as-cell.as-wrong{background:rgba(239,68,68,0.2);border-color:#ef4444;color:#fca5a5;}
+.as-cell.as-skip{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);color:#475569;}
+.as-cell:hover{transform:scale(1.08);}
+.as-num{font-size:13px;font-weight:800;}
+.as-letter{font-size:9px;margin-top:1px;opacity:0.8;}
+.review-item{background:rgba(255,255,255,0.03);border-radius:12px;padding:16px;margin-bottom:12px;}
+.review-item.ri-wrong{border:1px solid rgba(239,68,68,0.25);}
+.review-item.ri-correct{border:1px solid rgba(16,185,129,0.2);}
+.review-item.ri-skip{border:1px solid rgba(255,255,255,0.08);}
+/* Score */
+.score-circle{width:110px;height:110px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 14px;position:relative;background:conic-gradient(#6366f1 0deg,#38bdf8 var(--deg),rgba(255,255,255,0.06) var(--deg));}
+.score-circle::before{content:'';position:absolute;inset:9px;border-radius:50%;background:#1a1740;}
+.score-circle-inner{position:relative;text-align:center;z-index:1;}
+.score-num{font-size:20px;font-weight:900;background:linear-gradient(90deg,#818cf8,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.score-pct{font-size:9px;color:#64748b;}
+/* Sync */
+.stats-row{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+.stat-card{flex:1;min-width:80px;background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.2);border-radius:10px;padding:10px 14px;text-align:center;}
+.stat-num-big{font-size:22px;font-weight:800;background:linear-gradient(90deg,#818cf8,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.stat-label{font-size:11px;color:#64748b;margin-top:2px;}
+.share-code-box{background:rgba(0,0,0,0.3);border:1px solid rgba(99,102,241,0.25);border-radius:10px;padding:12px;font-size:11px;color:#64748b;word-break:break-all;max-height:90px;overflow-y:auto;line-height:1.5;font-family:monospace;margin-bottom:10px;}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;}
+.btn-sm{padding:8px 15px;border-radius:9px;border:none;cursor:pointer;font-size:13px;font-weight:600;transition:all 0.2s;}
+.btn-green{background:rgba(16,185,129,0.2);border:1px solid rgba(16,185,129,0.4);color:#6ee7b7;}
+.btn-green:hover{background:rgba(16,185,129,0.35);}
+.btn-blue{background:rgba(56,189,248,0.2);border:1px solid rgba(56,189,248,0.4);color:#7dd3fc;}
+.btn-blue:hover{background:rgba(56,189,248,0.35);}
+.btn-gray{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:#94a3b8;}
+.btn-gray:hover{background:rgba(255,255,255,0.12);}
+.import-tabs{display:flex;gap:6px;margin-bottom:14px;}
+.import-tab{padding:6px 14px;border-radius:50px;border:1px solid rgba(99,102,241,0.3);cursor:pointer;font-size:12px;background:transparent;color:#94a3b8;transition:all 0.2s;}
+.import-tab.active{background:rgba(99,102,241,0.25);color:#a5b4fc;border-color:rgba(99,102,241,0.5);}
+.merge-option{display:flex;gap:8px;margin-bottom:12px;}
+.merge-btn{flex:1;padding:8px;border-radius:9px;border:1px solid rgba(99,102,241,0.25);cursor:pointer;font-size:12px;text-align:center;background:transparent;color:#94a3b8;transition:all 0.2s;}
+.merge-btn.active{background:rgba(99,102,241,0.2);color:#a5b4fc;border-color:rgba(99,102,241,0.5);}
+.q-img{width:100%;max-height:300px;object-fit:contain;border-radius:10px;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);background:rgba(0,0,0,0.2);}
+.img-upload-area{width:100%;border:2px dashed rgba(99,102,241,0.35);border-radius:12px;padding:18px;text-align:center;cursor:pointer;transition:all 0.2s;background:rgba(99,102,241,0.04);position:relative;}
+.img-upload-area:hover{border-color:rgba(99,102,241,0.7);background:rgba(99,102,241,0.1);}
+.img-upload-area input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.img-preview-wrap{position:relative;margin-top:10px;}
+.img-preview-wrap img{width:100%;max-height:180px;object-fit:contain;border-radius:10px;border:1px solid rgba(99,102,241,0.25);}
+.img-remove-btn{position:absolute;top:6px;right:6px;background:rgba(239,68,68,0.85);border:none;color:#fff;border-radius:50%;width:24px;height:24px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;line-height:1;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-title">🧠 中央一号文件知识答题器</div>
+  <div class="header-sub" id="total-count">题库共 0 道题目</div>
+  <div class="save-tip" id="save-tip">💾 已自动保存</div>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('quiz')">答题</button>
+  <button class="tab-btn" onclick="switchTab('bank')">题库</button>
+  <button class="tab-btn" onclick="switchTab('catmgr')">分类管理</button>
+  <button class="tab-btn" onclick="switchTab('add')">添加题目</button>
+  <button class="tab-btn" onclick="switchTab('sync')">📤 数据同步</button>
+</div>
+
+<div class="container">
+
+  <!-- ===== 答题 ===== -->
+  <div id="tab-quiz">
+    <div id="quiz-setup" class="card">
+      <div class="card-title">⚙️ 答题设置</div>
+      <div class="form-group">
+        <label>选择分类</label>
+        <div id="quiz-cat-btns" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;"></div>
+      </div>
+      <div class="form-group" style="margin-bottom:18px;">
+        <label>题目顺序</label>
+        <div style="display:flex;gap:8px;margin-top:8px;">
+          <button class="btn-tag active" id="sort-btn-random" onclick="setSort('random')">🔀 随机排序</button>
+          <button class="btn-tag" id="sort-btn-fixed" onclick="setSort('fixed')">📋 固定顺序</button>
+        </div>
+      </div>
+      <div id="quiz-info" style="font-size:13px;color:#64748b;margin-bottom:18px;"></div>
+      <button class="btn-primary" onclick="startQuiz()">🚀 开始答题</button>
+    </div>
+
+    <div id="quiz-playing" class="hidden">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <span id="q-progress-text" style="font-size:13px;color:#94a3b8;"></span>
+        <span id="q-answered-badge" style="font-size:13px;background:rgba(99,102,241,0.2);padding:3px 12px;border-radius:50px;color:#818cf8;"></span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="q-progress-fill" style="width:0%"></div></div>
+      <div class="q-card">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <span id="q-cat-badge" class="cat-badge"></span>
+          <span id="q-num-badge" style="font-size:11px;color:#64748b;background:rgba(255,255,255,0.05);padding:2px 9px;border-radius:50px;"></span>
+        </div>
+        <div id="q-material-area" class="hidden"></div>
+        <div id="q-img-area" class="hidden"></div>
+        <div id="q-text" style="font-size:17px;font-weight:600;line-height:1.7;color:#f1f5f9;"></div>
+      </div>
+      <div id="q-options"></div>
+      <div id="q-explanation" class="explanation hidden"></div>
+      <div class="nav-row">
+        <button class="btn-nav btn-nav-prev" id="btn-prev" onclick="goPrev()">← 上一题</button>
+        <button class="btn-nav btn-nav-next" id="btn-next" onclick="goNext()">下一题 →</button>
+      </div>
+    </div>
+
+    <div id="quiz-finished" class="hidden">
+      <div class="card" style="text-align:center;">
+        <div id="fin-emoji" style="font-size:52px;margin-bottom:10px;"></div>
+        <div style="font-size:20px;font-weight:800;color:#f1f5f9;margin-bottom:4px;">答题完成！</div>
+        <div id="fin-score-area" style="margin:10px 0 4px;"></div>
+        <div id="fin-stats" style="font-size:13px;color:#94a3b8;margin-bottom:18px;"></div>
+        <div class="view-toggle">
+          <button class="view-toggle-btn active" id="vbtn-sheet" onclick="setView('sheet')">📋 答题卡</button>
+          <button class="view-toggle-btn" id="vbtn-all" onclick="setView('all')">📝 全部回顾</button>
+          <button class="view-toggle-btn" id="vbtn-wrong" onclick="setView('wrong')">❌ 错题复盘</button>
+        </div>
+        <div id="fin-content" style="text-align:left;margin-bottom:20px;"></div>
+        <button class="btn-primary" style="max-width:180px;" onclick="resetQuiz()">🔄 再来一次</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 题库 ===== -->
+  <div id="tab-bank" class="hidden">
+    <input class="input-field" id="bank-search" placeholder="🔍 搜索题目内容或分类..." oninput="renderBank()" style="margin-bottom:12px;">
+    <div id="bank-cat-filter" style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px;"></div>
+    <div id="bank-count" style="font-size:12px;color:#64748b;margin-bottom:12px;"></div>
+    <div id="bank-list"></div>
+  </div>
+
+  <!-- ===== 分类管理 ===== -->
+  <div id="tab-catmgr" class="hidden">
+    <div class="card">
+      <div class="card-title">🗂️ 分类管理</div>
+      <div id="cat-list"></div>
+      <div class="sep"></div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <input class="input-field" id="new-cat-input" placeholder="输入新分类名称..." style="flex:1;">
+        <button class="btn-secondary" onclick="addCategory()">＋ 添加</button>
+      </div>
+      <div id="cat-mgr-msg" style="margin-top:8px;font-size:12px;"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">📋 材料背景管理</div>
+      <div style="font-size:12px;color:#64748b;margin-bottom:14px;">为某分类中指定题目范围设置共同的背景材料，答题时将自动显示在题目上方。</div>
+      <div class="form-group">
+        <label>选择分类</label>
+        <select class="input-field" id="mat-cat-select" onchange="renderMatList()" style="cursor:pointer;">
+          <option value="">-- 请选择分类 --</option>
+        </select>
+      </div>
+      <div id="mat-list" style="margin-bottom:14px;"></div>
+      <div id="mat-add-form" class="hidden">
+        <div class="sep"></div>
+        <div style="font-size:13px;font-weight:600;color:#e2e8f0;margin-bottom:12px;">➕ 添加新材料背景</div>
+        <div style="display:flex;gap:8px;margin-bottom:10px;">
+          <div style="flex:1;">
+            <label>起始题号</label>
+            <input class="input-field" id="mat-from" type="number" min="1" placeholder="如：1">
+          </div>
+          <div style="flex:1;">
+            <label>结束题号</label>
+            <input class="input-field" id="mat-to" type="number" min="1" placeholder="如：10">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>材料内容 *</label>
+          <textarea class="textarea-field" id="mat-text" rows="5" placeholder="在此输入背景材料内容，如：&#10;背景材料：2025年10月，党的二十届四中全会审议通过了《中共中央关于制定国民经济和社会发展第十五个五年规划的建议》。据此完成下列小题。"></textarea>
+        </div>
+        <div id="mat-msg" style="font-size:12px;margin-bottom:8px;"></div>
+        <div style="display:flex;gap:8px;">
+          <button class="btn-primary" style="flex:1;padding:11px;" onclick="submitMat()">💾 保存材料</button>
+          <button class="btn-secondary" onclick="el('mat-add-form').classList.add('hidden')" style="padding:11px 16px;">取消</button>
+        </div>
+      </div>
+      <button class="btn-secondary" id="mat-add-btn" style="width:100%;padding:10px;margin-top:4px;" onclick="showMatAddForm()">＋ 添加材料背景</button>
+    </div>
+  </div>
+
+  <!-- ===== 添加题目 ===== -->
+  <div id="tab-add" class="hidden">
+    <div class="card">
+      <div class="card-title">➕ 添加新题目</div>
+      <div id="add-success" class="alert-success hidden">✅ 题目已成功添加到题库！</div>
+      <div id="add-error" class="alert-error hidden"></div>
+      <div class="form-group">
+        <label>题目分类 *</label>
+        <input class="input-field" id="form-cat" placeholder="如：历史、科学、数学...">
+        <div id="quick-cats" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;"></div>
+      </div>
+      <div class="form-group">
+        <label>题目内容 <span style="color:#475569;font-size:11px;">（可选，无文字时仅显示图片）</span></label>
+        <textarea class="textarea-field" id="form-question" placeholder="请输入题目内容（可选）..." rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label>题目图片 <span style="color:#475569;font-size:11px;">（可选，支持 JPG / PNG / GIF，建议 2MB 以内）</span></label>
+        <div id="img-upload-area" class="img-upload-area" onclick="triggerImgInput()">
+          <input type="file" id="form-img-input" accept="image/*" onchange="handleImgUpload(event)">
+          <div id="img-upload-placeholder">
+            <div style="font-size:28px;margin-bottom:6px;">🖼️</div>
+            <div style="font-size:13px;color:#94a3b8;margin-bottom:4px;">点击或拖拽上传图片</div>
+            <div style="font-size:11px;color:#475569;">也可直接 Ctrl+V 粘贴图片</div>
+          </div>
+          <div id="img-preview-wrap" class="img-preview-wrap hidden">
+            <img id="img-preview" src="" alt="预览">
+            <button class="img-remove-btn" onclick="removeImg(event)" title="移除图片">✕</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>选项 * <span style="color:#475569;font-size:11px;">(点击字母设置正确答案 · A框可粘贴整行选项自动拆分)</span></label>
+        <div style="margin-bottom:8px;">
+          <input class="input-field" id="opts-inline-input" placeholder='粘贴同行选项，如：A．①② B．①④ C．③④ D．①③' style="font-size:13px;">
+          <button class="btn-sm btn-blue" style="margin-top:6px;width:100%;padding:7px;" onclick="splitInlineOpts()">⚡ 拆分填入选项</button>
+        </div>
+        <div id="options-form"></div>
+      </div>
+      <div class="form-group">
+        <label>题目解析（可选）</label>
+        <textarea class="textarea-field" id="form-explanation" placeholder="添加解析帮助学习..." rows="2"></textarea>
+      </div>
+      <button class="btn-primary" onclick="submitAdd()">✨ 添加到题库</button>
+    </div>
+  </div>
+
+  <!-- ===== 数据同步 ===== -->
+  <div id="tab-sync" class="hidden">
+    <div class="card">
+      <div class="card-title">📊 当前数据</div>
+      <div class="stats-row" id="sync-stats"></div>
+      <div style="font-size:12px;color:#64748b;">数据已自动保存到本地，关闭后重新打开仍可使用。</div>
+    </div>
+    <div class="card">
+      <div class="card-title">📤 导出 / 分享</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <button class="btn-sm btn-green" style="text-align:left;padding:12px 16px;border-radius:10px;" onclick="exportJSON()">📁 下载 JSON 文件<span style="display:block;font-size:11px;font-weight:400;margin-top:2px;opacity:0.7">保存为文件，发送给他人导入</span></button>
+        <button class="btn-sm btn-blue" style="text-align:left;padding:12px 16px;border-radius:10px;" onclick="genShareCode()">🔗 生成分享码<span style="display:block;font-size:11px;font-weight:400;margin-top:2px;opacity:0.7">复制一段文字，对方粘贴后导入</span></button>
+      </div>
+      <div id="share-area" class="hidden" style="margin-top:14px;">
+        <div style="font-size:12px;color:#94a3b8;margin-bottom:6px;">分享码（复制发给对方）：</div>
+        <div class="share-code-box" id="share-code"></div>
+        <div class="btn-row">
+          <button class="btn-sm btn-green" onclick="copyCode()">📋 复制分享码</button>
+          <button class="btn-sm btn-gray" onclick="document.getElementById('share-area').classList.add('hidden')">关闭</button>
+        </div>
+        <div id="copy-tip" style="font-size:12px;color:#10b981;margin-top:6px;opacity:0;transition:opacity 0.3s;"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">📥 导入数据</div>
+      <div class="import-tabs">
+        <button class="import-tab active" id="itab-file" onclick="switchImportTab('file')">📁 从文件导入</button>
+        <button class="import-tab" id="itab-code" onclick="switchImportTab('code')">🔗 从分享码导入</button>
+      </div>
+      <div id="import-file-panel">
+        <label style="margin-bottom:8px;">选择 JSON 文件</label>
+        <input type="file" id="import-file-input" accept=".json" onchange="handleFileImport(event)"
+          style="width:100%;padding:10px;border-radius:10px;border:1px dashed rgba(99,102,241,0.4);background:rgba(99,102,241,0.05);color:#94a3b8;cursor:pointer;font-size:13px;">
+      </div>
+      <div id="import-code-panel" class="hidden">
+        <label style="margin-bottom:8px;">粘贴分享码</label>
+        <textarea class="textarea-field" id="import-code-input" placeholder="将分享码粘贴到这里..." rows="4"></textarea>
+        <button class="btn-primary" style="margin-top:10px;" onclick="handleCodeImport()">导入分享码</button>
+      </div>
+      <div id="import-preview" class="hidden" style="margin-top:14px;">
+        <div style="font-size:13px;color:#e2e8f0;margin-bottom:8px;font-weight:600;" id="import-preview-title"></div>
+        <div style="font-size:12px;color:#94a3b8;margin-bottom:10px;" id="import-preview-desc"></div>
+        <div style="font-size:12px;color:#94a3b8;margin-bottom:8px;">导入方式：</div>
+        <div class="merge-option">
+          <button class="merge-btn active" id="merge-btn-merge" onclick="setMergeMode('merge')">🔀 合并<br><span style="font-size:10px;opacity:0.7">保留现有，添加新题</span></button>
+          <button class="merge-btn" id="merge-btn-replace" onclick="setMergeMode('replace')">♻️ 覆盖<br><span style="font-size:10px;opacity:0.7">替换全部现有数据</span></button>
+        </div>
+        <div class="btn-row" style="margin-top:10px;">
+          <button class="btn-sm btn-green" onclick="confirmImport()">✅ 确认导入</button>
+          <button class="btn-sm btn-gray" onclick="cancelImport()">取消</button>
+        </div>
+      </div>
+      <div id="import-result" class="hidden" style="margin-top:12px;"></div>
+    </div>
+    <div class="card" style="border-color:rgba(239,68,68,0.2);">
+      <div class="card-title" style="color:#fca5a5;">⚠️ 危险操作</div>
+      <button class="btn-sm btn-danger" style="width:100%;padding:11px;border-radius:10px;font-size:13px;" onclick="clearAllData()">🗑️ 清空全部数据（恢复出厂）</button>
+    </div>
+  </div>
+
+
+<!-- ===== 编辑题目模态框 ===== -->
+<div id="edit-modal" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.75);backdrop-filter:blur(4px);overflow-y:auto;padding:20px 16px;">
+  <div style="max-width:660px;margin:0 auto;background:linear-gradient(135deg,#1e1b4b,#0f172a);border:1px solid rgba(99,102,241,0.35);border-radius:20px;padding:24px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+      <div style="font-size:18px;font-weight:700;color:#e2e8f0;">✏️ 编辑题目</div>
+      <button onclick="closeEditModal()" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:#94a3b8;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;">✕</button>
+    </div>
+    <div id="edit-success" class="alert-success hidden">✅ 题目已保存！</div>
+    <div id="edit-error" class="alert-error hidden"></div>
+    <div class="form-group">
+      <label>题目分类 *</label>
+      <input class="input-field" id="edit-cat" placeholder="分类名称">
+      <div id="edit-quick-cats" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;"></div>
+    </div>
+    <div class="form-group">
+      <label>题目内容</label>
+      <textarea class="textarea-field" id="edit-question" rows="4" placeholder="题目内容（可选）"></textarea>
+    </div>
+    <div class="form-group">
+      <label>题目图片 <span style="color:#475569;font-size:11px;">（可选）</span></label>
+      <div id="edit-img-upload-area" class="img-upload-area" style="position:relative;">
+        <input type="file" id="edit-img-input" accept="image/*" onchange="handleEditImgUpload(event)" style="position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;">
+        <div id="edit-img-placeholder">
+          <div style="font-size:24px;margin-bottom:4px;">🖼️</div>
+          <div style="font-size:13px;color:#94a3b8;">点击上传或拖拽图片</div>
+        </div>
+        <div id="edit-img-preview-wrap" class="img-preview-wrap hidden">
+          <img id="edit-img-preview" src="" alt="预览">
+          <button class="img-remove-btn" onclick="removeEditImg(event)" title="移除图片">✕</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>选项 * <span style="color:#475569;font-size:11px;">（点击字母设置正确答案）</span></label>
+      <div id="edit-options-form"></div>
+    </div>
+    <div class="form-group">
+      <label>题目解析（可选）</label>
+      <textarea class="textarea-field" id="edit-explanation" rows="2" placeholder="添加解析..."></textarea>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:4px;">
+      <button class="btn-primary" onclick="submitEdit()" style="flex:1;">💾 保存修改</button>
+      <button onclick="closeEditModal()" style="flex:0 0 auto;padding:13px 20px;border-radius:12px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.05);color:#94a3b8;cursor:pointer;font-size:15px;font-weight:700;">取消</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ==================== CONSTANTS ====================
+const OC=["#6366f1","#0ea5e9","#f59e0b","#10b981"];
+const OL=["A","B","C","D"];
+const SK_Q='quizapp_v6_questions';
+const SK_C='quizapp_v6_categories';
+const SK_M='quizapp_v6_materials';
+
+// ==================== STORAGE ====================
+const DEFAULT_Q=[{"id": 1772594204661, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》指出，农业农村现代化关系中国式现代化全局和成色。下列说法错误的有几项？\n①文件要求取消种粮农民收益保障机制以强化市场调节\n②文件提出允许在永久基本农田上建设乡村旅游民宿\n③文件强调要学习运用\"千万工程\"经验推进乡村建设\n④文件部署健全联农带农机制，拓展农民增收渠道\n⑤文件要求将农村完全复制城市建设模式", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 1, "explanation": "1.答案：B\n解析:①错误(文件要求健全种粮农民收益保障机制);②错误(永久基本农田严禁非农建设);③正确;④正确;⑤错误(文件明确不能把农村建设得跟城市一样)。错误项共3项。"}, {"id": 1772594265193, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》指出，2026年是\"十五五\"开局之年。下列相关说法正确的有几项？\n①坚持五级书记抓乡村振兴\n②粮食产量目标设定为1.3万亿斤\n③推动城乡融合发展是必然要求\n④允许占用永久基本农田发展林果业\n⑤学习运用\"千万工程\"经验推进乡村建设", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 1, "explanation": "2.答案：B\n解析:①正确(坚持五级书记抓乡村振兴);②错误(粮食产量目标为1.4万亿斤左右);③正确(推动城乡融合发展);④错误(永久基本农田严禁发展林果业);⑤正确(学习运用\"千万工程\"经验)。正确项共3项。"}, {"id": 1772594320394, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于耕地保护，下列说法错误的有几项？\n①严守18亿亩耕地红线\n②允许在高标准农田区域建设别墅用于乡村旅游\n③稳妥有序推进耕地\"非粮化\"\n④分区分类高质量推进高标准农田建设\n⑤鼓励占用永久基本农田发展挖塘养鱼", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 1, "explanation": "3.答案：B\n解析:①正确(严守18亿亩耕地红线);②错误(高标准农田严禁建别墅);③错误(文件要求\"整改非粮化\",非\"推进非粮化\");④正确;⑤错误(永久基本农田严禁挖塘养鱼)。错误项共3项。"}, {"id": 1772594352423, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于防止返贫，下列相关说法正确的有几项？\n①保持财政投入、金融支持政策总体稳定\n②对所有脱贫人口实行终身固定帮扶\n③合理确定防止返贫致贫对象认定标准\n④确保早发现、早干预、早帮扶\n⑤取消社会救助兜底保障作用", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 1, "explanation": "4.答案：B\n解析:①正确(保持帮扶政策总体稳定);②错误(实行动态管理,非终身固定);③正确(合理确定认定标准);④正确(确保早发现、早干预、早帮扶);⑤错误(强调发挥社会救助兜底作用)。正确项共3项。"}, {"id": 1772594398302, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》指出，关于农业科技创新，下列说法错误的有几项？\n①深入实施种业振兴行动\n②全面禁止生物育种产业化应用\n③加快丘陵山区适用农机装备研发\n④限制人工智能、无人机在农业中应用\n⑤推进化肥农药减量增效", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 0, "explanation": "5.答案：A\n解析:①正确;②错误(文件要求推进生物育种产业化);③正确;④错误(鼓励拓展人工智能、无人机应用场景);⑤正确。错误项共2项。"}, {"id": 1772594452183, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于乡村建设，下列相关说法正确的有几项？\n①学习运用\"千万工程\"经验\n②因地制宜推进宜居宜业和美乡村建设\n③加快补齐农村现代生活条件短板\n④科学开展乡村规划建设\n⑤将农村建设成与城市完全相同的居住空间", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 2, "explanation": "6.答案：C\n解析:①②③④均正确(文件明确部署);⑤错误(不能把农村建设得跟城市一样)。正确项共4项。"}, {"id": 1772594495382, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于农村改革，下列说法错误的有几项？\n①全面开展第二轮土地承包到期后再延长三十年整省试点\n②允许宅基地跨村自由买卖交易\n③深化农村集体产权制度改革\n④规范承包地经营权流转\n⑤鼓励村级随意举债发展产业项目", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 0, "explanation": "7.答案：A\n解析:①正确;②错误(宅基地严禁自由买卖);③正确;④正确;⑤错误(严控新增村级债务)。错误项共2项。"}, {"id": 1772594527246, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于农民增收，下列相关说法正确的有几项？\n①完善产业帮扶到户奖补政策\n②用好就业帮扶车间、乡村公益性岗位\n③强化东西部劳务协作\n④支持返乡创业\n⑤取消农民工工资支付保障制度", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 2, "explanation": "8.答案：C\n解析:①②③④均正确(文件部署产业就业帮扶措施);⑤错误(强化农民工工资支付保障)。正确项共4项。"}, {"id": 1772595739679, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于\"菜篮子\"工程，下列说法错误的有几项？\n①强化生猪产能综合调控\n②限制乳制品消费以控制居民肥胖率\n③支持设施农业更新改造\n④推进深远海养殖\n⑤取消肉牛奶牛产业纾困政策", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 0, "explanation": "9.答案：A\n解析:①③④正确;②错误(文件要求促进乳制品消费);⑤错误(巩固肉牛、奶牛产业纾困成果)。错误项共2项。"}, {"id": 1772595765462, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于欠发达地区帮扶，下列相关说法正确的有几项？\n①分层分类帮扶国家和省级乡村振兴重点帮扶县\n②深入开展医疗、教育\"组团式\"帮扶\n③选派科技特派团\n④拓展东西部协作领域\n⑤取消中央单位定点帮扶机制", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 2, "explanation": "10.答案:C\n解析:①②③④均正确(文件部署欠发达地区帮扶措施);⑤错误(改进定点帮扶考核,非取消)。正确项共4项。"}, {"id": 1772595808334, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于农业防灾减灾，下列说法错误的有几项？\n①加强气象水文灾害监测预报预警\n②取消病险水库除险加固工程\n③停止抗旱应急水源工程建设\n④强化重大动物疫病联防联控\n⑤推进农田防护林建设", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 0, "explanation": "11.答案:A\n解析:①④⑤正确;②错误(推进病险水库除险加固);③错误(加强抗旱应急水源工程建设)。错误项共2项。"}, {"id": 1772595848583, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于农村公共服务，下列相关说法正确的有几项？\n①保留必要乡村小规模学校\n②推进县级医院提质升级\n③发展县乡普惠托育服务\n④巩固拓展农村居民医保参保成果\n⑤全面撤销农村养老服务站点", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 2, "explanation": "12.答案:C\n解析:①②③④均正确(文件要求完善农村公共服务);⑤错误(完善农村养老服务体系)。正确项共4项。"}, {"id": 1772595924502, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于农村人居环境整治，下列说法错误的有几项？\n①持续推进农村改厕问题排查整改\n②鼓励露天焚烧秸秆处理农业废弃物\n③推进农村生活垃圾分类源头减量\n④加强畜禽粪污资源化利用\n⑤放任农村黑臭水体自然消退", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 0, "explanation": "13.答案:A\n解析:①③④正确;②错误(严禁露天焚烧秸秆);⑤错误(加快消除农村黑臭水体)。错误项共2项。"}, {"id": 1772596003463, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于乡风文明建设，下列相关说法正确的有几项？\n①持续推进农村移风易俗\n②整治高额彩礼\n③整治大操大办\n④整治薄养厚葬\n⑤鼓励封建迷信活动以保留传统文化", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 2, "explanation": "14.答案:C\n解析:①②③④均正确(文件部署移风易俗重点任务);⑤错误(反对封建迷信)。正确项共4项。"}, {"id": 1772596043474, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于农业科技人才，下列说法错误的有几项？\n①推动涉农专业人才定向培养\n②加快新农科建设\n③推进基层农技推广体系改革\n④培育数字农业复合型人才\n⑤取消农业科研院所改革试点", "image": "", "options": ["1项", "3项", "4项", "5项"], "answer": 0, "explanation": "15.答案:A\n解析:①②③④均正确(文件要求加强农业科技人才培养);⑤错误(深化农业科研院所改革)。错误项共1项,选A。"}, {"id": 1772596070369, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于油料生产，下列相关说法正确的有几项？\n①巩固提升大豆产能\n②拓展油菜生产空间\n③扩大花生种植面积\n④发展油茶产业\n⑤限制多元化油料供给渠道", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 2, "explanation": "16.答案:C\n解析:①②③④均正确(文件部署扩大油料多元化供给);⑤错误(要求扩大供给,非限制)。正确项共4项。"}, {"id": 1772596117272, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于农产品贸易，下列说法错误的有几项？\n①推进农产品进口来源多元化\n②支持扩大优势特色农产品出口\n③依法严厉打击农产品走私行为\n④退出国际粮农治理合作机制\n⑤禁止农业企业参与国际市场竞争", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 0, "explanation": "17.答案:A\n解析:①②③正确;④错误(积极参与国际粮农治理);⑤错误(培育国际竞争力农业企业)。错误项共2项。"}, {"id": 1772596144717, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于农村基础设施，下列相关说法正确的有几项？\n①推行农村供水县域统管模式\n②扩大农村充电设施覆盖范围\n③深化快递进村工程\n④实施数字乡村高质量发展行动\n⑤停止\"四好农村路\"建设", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 2, "explanation": "18.答案:C\n解析:①②③④均正确(文件部署农村基础设施建设);⑤错误(持续推进\"四好农村路\"建设)。正确项共4项。"}, {"id": 1772596174700, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于帮扶项目资产管理，下列说法错误的有几项？\n①压实帮扶项目资产常态化监管责任\n②允许随意处置扶贫项目形成的资产\n③分类纳入国有资产或农村集体资产监管体系\n④加强低效闲置资产盘活利用\n⑤确保帮扶投入长期发挥效益", "image": "", "options": ["1项", "3项", "4项", "5项"], "answer": 0, "explanation": "19.答案:A\n解析:①③④⑤正确;②错误(严禁随意处置扶贫资产)。错误项共1项,选A。"}, {"id": 1772596198491, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于粮食节约，下列相关说法正确的有几项？\n①深入推进粮食节约行动\n②反对食品浪费\n③提高粮食仓储物流效率\n④推广节粮减损适用技术\n⑤鼓励餐饮行业铺张宴请消费", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 2, "explanation": "20.答案:C\n解析:①②③④均正确(文件部署粮食节约行动);⑤错误(反对铺张浪费)。正确项共4项。"}, {"id": 1772596223019, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于农村治理，下列说法错误的有几项？\n①坚持和发展新时代\"枫桥经验\"\n②常态化开展扫黑除恶斗争\n③放任\"村霸\"等黑恶势力滋生蔓延\n④加强农村宗教事务依法管理\n⑤打击侵害妇女儿童权益违法犯罪行为", "image": "", "options": ["1项", "3项", "4项", "5项"], "answer": 0, "explanation": "21.答案:A\n解析:①②④⑤正确;③错误(严打\"村霸\"等黑恶势力)。错误项共1项,选A。"}, {"id": 1772596242892, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于生态农业，下列相关说法正确的有几项？\n①持续推进长江十年禁渔\n②加强外来入侵物种监测防控\n③强化农业面源污染综合治理\n④实施新一轮黑土地保护工程\n⑤鼓励化肥农药超量使用增产", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 2, "explanation": "22.答案:C\n解析:①②③④均正确(文件部署生态农业措施);⑤错误(推进化肥农药减量增效)。正确项共4项。"}, {"id": 1772596289890, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于农村金融，下列说法错误的有几项？\n①推动金融机构加大支农资金投放力度\n②加大对涉农贷款展期续贷支持力度\n③严肃查处挤占挪用涉农资金行为\n④取消农业保险保费补贴政策\n⑤用足用好地方政府专项债券支持农业农村项目", "image": "", "options": ["1项", "3项", "4项", "5项"], "answer": 0, "explanation": "23.答案:A\n解析:①②③⑤正确;④错误(稳定实施农业保险保费补贴)。错误项共1项,选A。"}, {"id": 1772596310611, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于农业强国建设目标，下列相关说法正确的有几项？\n①到2035年农业现代化基本实现\n②农村基本具备现代生活条件\n③亿万农民整体迈入现代化\n④释放乡村巨大发展动能和消费潜能\n⑤放弃农业农村优先发展基本原则", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 2, "explanation": "24.答案:C\n解析:①②③④均正确(文件明确农业强国建设目标);⑤错误(坚持农业农村优先发展)。正确项共4项。"}, {"id": 1772596374802, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》指出，下列说法错误的有几项？\n①\"三农\"向好，则全局主动\n②2025年粮食产量达1.4298万亿斤\n③坚持四级书记抓乡村振兴工作机制\n④推动城乡割裂式独立发展\n⑤树立和践行正确政绩观", "image": "", "options": ["2项", "3项", "4项", "5项"], "answer": 0, "explanation": "25.答案:A\n解析:①②⑤正确;③错误(坚持五级书记抓乡村振兴);④错误(推动城乡融合发展)。错误项共2项。"}, {"id": 1772596405261, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》指出，做好\"三农\"工作必须坚持：", "image": "", "options": ["四级书记抓乡村振兴", "五级书记抓乡村振兴", "三级书记抓乡村振兴", "两级书记抓乡村振兴"], "answer": 1, "explanation": "26.答案B。解析:文件开篇强调\"坚持五级书记抓乡村振兴\",是党管农村工作的重要制度安排。"}, {"id": 1772596430132, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》指出，2026年是：", "image": "", "options": ["\"十四五\"收官之年", "\"十五五\"开局之年", "\"十六五\"规划启动年", "全面建成小康社会决胜年"], "answer": 1, "explanation": "27.答案B。解析:文件开宗明义\"2026年是'十五五'开局之年\",凸显年度工作战略定位。"}, {"id": 1772596450724, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》指出，要加力实施：", "image": "", "options": ["新一轮百亿斤粮食产能提升行动", "新一轮千亿斤粮食产能提升行动", "新一轮万亿斤粮食产能提升行动", "新一轮十亿斤粮食产能提升行动"], "answer": 1, "explanation": "28.答案B。解析:文件在\"稳定粮油生产\"部分明确\"加力实施新一轮千亿斤粮食产能提升行动\"。"}, {"id": 1772596542767, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》明确，要学习运用的经验是：", "image": "", "options": ["\"枫桥经验\"", "\"浦江经验\"", "\"晋江经验\"", "\"千万工程\"经验"], "answer": 3, "explanation": "29.答案D。解析:文件第三部分标题即\"以学习运用'千万工程'经验为引领,提升乡村建设水平\",是乡村建设核心方法论。"}, {"id": 1772596563653, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》指出，关于防止返贫，2026年起进入：", "image": "", "options": ["过渡期最后一年", "常态化帮扶阶段", "全面取消帮扶阶段", "城市反哺农村阶段"], "answer": 1, "explanation": "30.答案B。解析:文件指出\"把常态化帮扶纳入乡村振兴战略统筹实施\",标志工作重心转入常态化阶段。"}, {"id": 1772596588507, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》提出，要推进生物育种：", "image": "", "options": ["限制化", "小范围试点", "产业化", "暂停实施"], "answer": 2, "explanation": "31.答案C。解析:文件在\"提升农业科技创新效能\"中明确\"推进生物育种产业化\"。"}, {"id": 1772596607538, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》在耕地保护方面要求严查：", "image": "", "options": ["农产品价格波动", "农村乱占耕地建房", "农民外出务工", "农村电商发展"], "answer": 1, "explanation": "32.答案B。解析:文件在耕地保护部分要求\"严查农村乱占耕地建房等违法行为\"。"}, {"id": 1772596630555, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于农业科技，鼓励拓展的应用场景不包括：", "image": "", "options": ["无人机", "物联网", "机器人", "虚拟货币"], "answer": 3, "explanation": "33.答案D。解析:文件鼓励\"拓展无人机、物联网、机器人等应用场景\",虚拟货币与农业数字化无关且属金融监管范畴。"}, {"id": 1772596650276, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》强调，要守住的底线是：", "image": "", "options": ["不发生规模性返贫致贫", "不发生农村人口外流", "不发生农产品出口下降", "不发生农业机械化率降低"], "answer": 0, "explanation": "34.答案A。解析:文件将\"守牢不发生规模性返贫致贫底线\"列为三大底线任务之首。"}, {"id": 1772596667188, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于乡村建设指出不能：", "image": "", "options": ["改善中心村生活条件", "科学配置资源", "把农村建设得跟城市一样", "推进污水治理"], "answer": 2, "explanation": "35.答案C。解析:文件强调\"不能把农村建设得跟城市一样\",要求保留乡村风貌和乡土气息。"}, {"id": 1772596687227, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》提出，要分层分类帮扶：", "image": "", "options": ["所有城市社区", "欠发达地区", "高收入农户", "外资农业企业"], "answer": 1, "explanation": "36.答案B。解析:文件专章部署\"分层分类帮扶欠发达地区\",是巩固脱贫成果关键举措。"}, {"id": 1772596713455, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于土地承包，目前正有序推进：", "image": "", "options": ["第二轮到期后再延长十五年试点", "第二轮到期后再延长三十年试点", "第三轮承包全面启动", "土地私有化改革"], "answer": 1, "explanation": "37.答案B。解析:文件在\"深化农村改革\"中明确\"全面开展第二轮土地承包到期后再延长三十年整省试点\"。"}, {"id": 1772596729109, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》要求，对帮扶对象实行：", "image": "", "options": ["终身固定身份", "动态进出管理", "一次性补助后退出", "全部转为低保户"], "answer": 1, "explanation": "38.答案B。解析:文件要求\"规范防止返贫监测对象管理,实行动态进出\"。"}, {"id": 1772596754181, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于农民增收主渠道强调：", "image": "", "options": ["发展产业和稳定就业", "依赖政府救济", "减少农业生产", "鼓励非法集资"], "answer": 0, "explanation": "39.答案A。解析:文件将\"发展产业和促进就业\"作为农民增收两大主渠道反复强调。"}, {"id": 1772596774968, "category": "中央一号文件50题", "question": "026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》指出，\"三农\"向好，则：", "image": "", "options": ["全局被动", "全局主动", "城市衰退", "外贸受阻"], "answer": 1, "explanation": "40.答案B。解析:文件开篇指出\"'三农'向好,全局主动\",体现\"三农\"工作战略地位。"}, {"id": 1772596803636, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》提及，2025年我国粮食产量达到：", "image": "", "options": ["1.2万亿斤", "1.3万亿斤", "1.4298万亿斤", "1.6万亿斤"], "answer": 2, "explanation": "41.答案C。解析:文件在\"2025年工作回顾\"中明确\"粮食产量1.4298万亿斤,再创新高\"。"}, {"id": 1772596832141, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》强调，要推动：", "image": "", "options": ["城乡割裂发展", "城乡融合发展", "农村向城市单向输血", "取消农村户籍"], "answer": 1, "explanation": "42.答案B。解析:文件将\"坚持城乡融合发展\"作为基本原则,贯穿全文。"}, {"id": 1772596847132, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于食品安全要求：", "image": "", "options": ["放宽农兽药残留标准", "严查非法添加和农兽药残留超标", "取消全链条监管", "鼓励小作坊无证生产"], "answer": 1, "explanation": "43.答案B。解析:文件在\"强化农产品质量安全监管\"中要求\"严查非法添加和农兽药残留超标\"。"}, {"id": 1772596872675, "category": "中央一号文件50题", "question": "026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》提出，要培育具有：", "image": "", "options": ["国际竞争力的农业企业", "垄断地位的农资公司", "地方保护主义的合作社", "非市场化经营主体"], "answer": 0, "explanation": "44.答案A。解析:文件在\"深化农业对外开放\"中提出\"培育具有国际竞争力的农业企业\"。"}, {"id": 1772596898395, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于农村教育要求：", "image": "", "options": ["撤并所有乡村小学", "保留必要乡村小规模学校", "禁止农村学生进城读书", "取消义务教育"], "answer": 1, "explanation": "45.答案B。解析:文件在\"提升农村基本公共服务水平\"中明确\"保留必要乡村小规模学校\"。"}, {"id": 1772596925361, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》强调，要推进：", "image": "", "options": ["高耗水漫灌农业", "节水农业和滴灌技术", "化肥无限量使用", "农药随意喷洒"], "answer": 3, "explanation": "第46题 答案：D\n解析： 关于粮食安全责任制，文件要求全面落实粮食安全党政同责，严格考核督查，确保粮食播种面积稳定。选项D\"仅由农业农村部负责\"表述错误，应为党政同责。"}, {"id": 1772596965016, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于农村医疗提出要：", "image": "", "options": ["撤销乡镇卫生院", "推进县级医院提质升级", "禁止村医执业", "取消医保报销"], "answer": 2, "explanation": "第47题 答案：C\n解析： 关于乡村治理，文件要求：①健全党组织领导的自治、法治、德治相结合的乡村治理体系；②推进乡村数字化治理；③深化村民自治实践；④加强农村精神文明建设。⑤\"取消村民会议制度\"错误。"}, {"id": 1772596986137, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》指出，要发挥社会救助的：", "image": "", "options": ["主体作用", "补充作用", "兜底保障作用", "替代产业帮扶作用"], "answer": 1, "explanation": "第48题 答案：B\n解析： 关于农业绿色发展，文件要求：①推进农业面源污染防治；②加强畜禽粪污资源化利用；③推进秸秆综合利用；④发展生态循环农业。⑤\"禁止使用化肥农药\"错误，应为减量增效。"}, {"id": 1772597005344, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》关于农村能源支持发展：", "image": "", "options": ["高污染燃煤锅炉", "分布式可再生能源", "柴草直燃取暖", "无处理沼气排放"], "answer": 0, "explanation": "第49题 答案：A\n解析： 关于农民增收，文件要求：①发展乡村产业；②促进农民工就业；③盘活农村资源资产；④完善农业补贴政策。⑤\"强制农民进城购房\"错误。"}, {"id": 1772597037063, "category": "中央一号文件50题", "question": "2026年中央一号文件《中共中央国务院关于锚定农业农村现代化扎实推进乡村全面振兴的意见》强调，要树立和践行：", "image": "", "options": ["GDP至上政绩观", "形象工程政绩观", "正确政绩观", "数字报表政绩观"], "answer": 2, "explanation": "第50题 答案：C\n解析： 关于乡村振兴投入保障，文件要求：①坚持农业农村优先发展；②加大财政投入力度；③引导金融资源向农业农村倾斜；④鼓励社会资本投入乡村振兴。⑤\"减少涉农资金整合\"错误。"}];
+const DEFAULT_C=["中央一号文件50题"];
+
+function loadData(){
+  try{
+    const q=localStorage.getItem(SK_Q),c=localStorage.getItem(SK_C),m=localStorage.getItem(SK_M);
+    return{
+      questions:q?JSON.parse(q):JSON.parse(JSON.stringify(DEFAULT_Q)),
+      categories:c?JSON.parse(c):[...DEFAULT_C],
+      materials:m?JSON.parse(m):{}
+    };
+  }catch(e){return{questions:JSON.parse(JSON.stringify(DEFAULT_Q)),categories:[...DEFAULT_C],materials:{}};}
+}
+let _st=null;
+function saveData(){
+  try{
+    localStorage.setItem(SK_Q,JSON.stringify(questions));
+    localStorage.setItem(SK_C,JSON.stringify(categories));
+    localStorage.setItem(SK_M,JSON.stringify(materials));
+    const saveTip=document.getElementById('save-tip');
+    saveTip.classList.add('show');clearTimeout(_st);
+    _st=setTimeout(()=>saveTip.classList.remove('show'),1800);
+  }catch(e){}
+}
+const _d=loadData();
+let questions=_d.questions;
+// categories: ONLY explicitly managed list — questions' categories do NOT auto-add here
+let categories=_d.categories;
+// materials: {catName: [{id, from, to, text}]}
+let materials=_d.materials||{};
+
+// ==================== HELPERS ====================
+function updateCount(){document.getElementById('total-count').textContent=`题库共 ${questions.length} 道题目`;}
+
+function el(id){return document.getElementById(id);}
+
+// ==================== TABS ====================
+const TABS=['quiz','bank','catmgr','add','sync'];
+const tabBtns=document.querySelectorAll('.tab-btn');
+function switchTab(name){
+  TABS.forEach(t=>el('tab-'+t).classList.add('hidden'));
+  el('tab-'+name).classList.remove('hidden');
+  tabBtns.forEach((b,i)=>b.classList.toggle('active',TABS[i]===name));
+  ({
+    bank:renderBank,
+    catmgr:()=>{renderCatMgr();renderCatSelectForMat();renderMatList();},
+    add:()=>{renderQuickCats();renderOptionsForm();initImgUploadArea();},
+    quiz:renderQuizSetup,
+    sync:renderSyncStats
+  })[name]?.();
+}
+
+// ==================== QUIZ ====================
+let QS={
+  category:'全部',
+  shuffle:true,      // true=random, false=fixed order
+  questions:[],
+  idx:0,
+  answers:{},
+  curView:'sheet'
+};
+
+function renderQuizSetup(){
+  updateCount();
+  const cats=['全部',...categories];
+  const wrap=el('quiz-cat-btns');
+  wrap.innerHTML='';
+  cats.forEach(cat=>{
+    const b=document.createElement('button');
+    b.className='btn-tag'+(QS.category===cat?' active':'');
+    b.textContent=cat;
+    b.onclick=()=>{QS.category=cat;renderQuizSetup();};
+    wrap.appendChild(b);
+  });
+  // sync sort buttons
+  const rb=el('sort-btn-random'),fb=el('sort-btn-fixed');
+  if(rb&&fb){rb.classList.toggle('active',QS.shuffle);fb.classList.toggle('active',!QS.shuffle);}
+  const pool=QS.category==='全部'?questions:questions.filter(q=>q.category===QS.category);
+  el('quiz-info').textContent=`本次将答 ${pool.length} 道题目（${QS.shuffle?'随机排序':'固定顺序'}）`;
+}
+function setSort(mode){
+  QS.shuffle=(mode==='random');
+  renderQuizSetup();
+}
+
+function startQuiz(){
+  const pool=(QS.category==='全部'?questions:questions.filter(q=>q.category===QS.category));
+  if(!pool.length){alert('该分类暂无题目！');return;}
+  QS.questions=QS.shuffle?[...pool].sort(()=>Math.random()-0.5):[...pool];
+  QS.idx=0;QS.answers={};
+  el('quiz-setup').classList.add('hidden');
+  el('quiz-finished').classList.add('hidden');
+  el('quiz-playing').classList.remove('hidden');
+  renderQ();
+}
+
+function renderQ(){
+  const q=QS.questions[QS.idx],total=QS.questions.length,idx=QS.idx;
+  el('q-progress-text').textContent=`第 ${idx+1} / ${total} 题`;
+  el('q-answered-badge').textContent=`已答 ${Object.keys(QS.answers).length} 题`;
+  el('q-progress-fill').style.width=`${(idx/total)*100}%`;
+  el('q-cat-badge').textContent=q.category;
+  el('q-num-badge').textContent=`No.${idx+1}`;
+  // Material background
+  const matEl=el('q-material-area');
+  if(matEl){
+    const catMats=materials[q.category]||[];
+    // 计算该题在该分类中的序号（按固定顺序）
+    const catQs=questions.filter(x=>x.category===q.category);
+    const catIdx=catQs.findIndex(x=>x.id===q.id)+1;
+    const mat=catMats.find(m=>catIdx>=m.from&&catIdx<=m.to);
+    if(mat){
+      matEl.innerHTML=`<div style="background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.25);border-radius:12px;padding:14px 16px;margin-bottom:14px;font-size:13px;color:#93c5fd;line-height:1.8;white-space:pre-wrap;"><span style="font-weight:700;color:#38bdf8;display:block;margin-bottom:6px;">📄 背景材料</span>${mat.text}</div>`;
+      matEl.classList.remove('hidden');
+    } else {
+      matEl.innerHTML='';matEl.classList.add('hidden');
+    }
+  }
+  // Image
+  const qImgEl=el('q-img-area');
+  if(qImgEl){
+    if(q.image){qImgEl.innerHTML=`<img class="q-img" src="${q.image}" alt="题目图片">`;qImgEl.classList.remove('hidden');}
+    else{qImgEl.innerHTML='';qImgEl.classList.add('hidden');}
+  }
+  el('q-text').textContent=q.question||'';
+  el('q-text').style.display=q.question?'':'none';
+
+  const chosen=QS.answers[idx];
+  const answered=chosen!==undefined;
+
+  // Options
+  const wrap=el('q-options');
+  wrap.innerHTML='';
+  q.options.forEach((opt,i)=>{
+    const b=document.createElement('button');
+    b.className='option-btn';
+    if(answered){
+      if(i===q.answer)b.classList.add('correct');
+      else if(i===chosen)b.classList.add('wrong');
+      b.disabled=true;
+    }
+    const mark=answered?(i===q.answer?'✅':i===chosen?'❌':''):'';
+    b.innerHTML=`<span class="option-letter" style="background:${OC[i]}22;border:1px solid ${OC[i]}55;color:${OC[i]}">${OL[i]}</span><span style="flex:1">${opt}</span><span>${mark}</span>`;
+    if(!answered) b.onclick=()=>selectAnswer(i);
+    wrap.appendChild(b);
+  });
+
+  // Explanation
+  const expEl=el('q-explanation');
+  if(answered&&q.explanation){expEl.textContent='💡 '+q.explanation;expEl.classList.remove('hidden');}
+  else expEl.classList.add('hidden');
+
+  // Nav buttons
+  el('btn-prev').style.visibility=idx===0?'hidden':'visible';
+  const nextBtn=el('btn-next');
+  if(idx===total-1){nextBtn.textContent=answered?'查看成绩 🏆':'完成答题 →';}
+  else{nextBtn.textContent=answered?'下一题 →':'跳过 →';nextBtn.style.opacity=answered?'1':'0.6';}
+}
+
+function selectAnswer(optIdx){
+  QS.answers[QS.idx]=optIdx;
+  renderQ();
+  // Auto-advance: if no explanation, go next after 600ms; if has explanation, 1400ms
+  const q=QS.questions[QS.idx];
+  const delay=q.explanation?1400:600;
+  setTimeout(()=>{
+    // Only auto-advance if the answer hasn't changed (user didn't go back)
+    if(QS.answers[QS.idx]===optIdx){
+      if(QS.idx+1>=QS.questions.length) showFinished();
+      else{QS.idx++;renderQ();}
+    }
+  },delay);
+}
+function goPrev(){if(QS.idx>0){QS.idx--;renderQ();}}
+function goNext(){
+  if(QS.idx+1>=QS.questions.length)showFinished();
+  else{QS.idx++;renderQ();}
+}
+
+function calcScore(){return QS.questions.filter((q,i)=>QS.answers[i]===q.answer).length;}
+
+function showFinished(){
+  el('quiz-playing').classList.add('hidden');
+  el('quiz-finished').classList.remove('hidden');
+  const s=calcScore(),t=QS.questions.length,r=t?s/t:0;
+  el('fin-emoji').textContent=r>=0.8?'🏆':r>=0.5?'🎯':'📚';
+  const deg=Math.round(r*360);
+  el('fin-score-area').innerHTML=`<div class="score-circle" style="--deg:${deg}deg"><div class="score-circle-inner"><div class="score-num">${s}/${t}</div><div class="score-pct">${Math.round(r*100)}%</div></div></div>`;
+  const wc=QS.questions.filter((_,i)=>QS.answers[i]!==undefined&&QS.answers[i]!==QS.questions[i].answer).length;
+  const uc=QS.questions.filter((_,i)=>QS.answers[i]===undefined).length;
+  el('fin-stats').textContent=`✅ 正确 ${s} 题  ❌ 错误 ${wc} 题${uc?`  ⬜ 未答 ${uc} 题`:''}`;
+  el('vbtn-wrong').textContent=`❌ 错题复盘 (${wc})`;
+  setView('sheet');
+}
+
+function setView(v){
+  QS.curView=v;
+  ['sheet','all','wrong'].forEach(x=>{
+    el('vbtn-'+x).classList.toggle('active',x===v);
+  });
+  const container=el('fin-content');
+  if(v==='sheet')renderSheet(container);
+  else renderReview(container,v);
+}
+
+function renderSheet(container){
+  const t=QS.questions.length;
+  let html='<div style="font-size:12px;color:#64748b;margin-bottom:12px;">点击格子查看题目详情</div><div class="answer-sheet-grid">';
+  for(let i=0;i<t;i++){
+    const q=QS.questions[i],chosen=QS.answers[i];
+    const skip=chosen===undefined;
+    const ok=!skip&&chosen===q.answer;
+    const cls=skip?'as-skip':ok?'as-correct':'as-wrong';
+    const letter=skip?'—':OL[chosen];
+    html+=`<div class="as-cell ${cls}" data-idx="${i}"><div class="as-num">${i+1}</div><div class="as-letter">${letter}</div></div>`;
+  }
+  html+=`</div>
+  <div style="display:flex;gap:14px;font-size:11px;color:#64748b;margin-bottom:16px;">
+    <span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:rgba(16,185,129,0.3);margin-right:4px;vertical-align:middle"></span>正确</span>
+    <span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:rgba(239,68,68,0.3);margin-right:4px;vertical-align:middle"></span>错误</span>
+    <span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:rgba(255,255,255,0.08);margin-right:4px;vertical-align:middle"></span>未答</span>
+  </div>
+  <div id="sheet-detail"></div>`;
+  container.innerHTML=html;
+  // Bind click events via delegation
+  container.querySelector('.answer-sheet-grid').addEventListener('click',function(e){
+    const cell=e.target.closest('.as-cell');
+    if(cell)showSheetDetail(parseInt(cell.dataset.idx));
+  });
+}
+
+function showSheetDetail(i){
+  const q=QS.questions[i],chosen=QS.answers[i];
+  const skip=chosen===undefined,ok=!skip&&chosen===q.answer;
+  const optsH=q.options.map((opt,oi)=>{
+    let bg='rgba(255,255,255,0.03)',bd='rgba(255,255,255,0.08)',co='#94a3b8',mk='';
+    if(oi===q.answer){bg='rgba(16,185,129,0.12)';bd='rgba(16,185,129,0.3)';co='#6ee7b7';mk='✓ 正确答案';}
+    if(oi===chosen&&!ok){bg='rgba(239,68,68,0.12)';bd='rgba(239,68,68,0.3)';co='#fca5a5';mk='✗ 你选了';}
+    return `<div style="padding:8px 12px;border-radius:8px;font-size:12px;background:${bg};border:1px solid ${bd};color:${co};display:flex;align-items:center;gap:7px;margin-bottom:5px;"><span style="font-weight:700;opacity:0.7">${OL[oi]}.</span><span style="flex:1">${opt}</span>${mk?`<span style="font-size:10px;white-space:nowrap">${mk}</span>`:''}</div>`;
+  }).join('');
+  const det=el('sheet-detail');
+  det.innerHTML=`<div style="background:rgba(255,255,255,0.03);border-radius:12px;padding:16px;border:1px solid ${ok?'rgba(16,185,129,0.2)':skip?'rgba(255,255,255,0.08)':'rgba(239,68,68,0.2)'};">
+    <div style="display:flex;align-items:center;gap:7px;margin-bottom:10px;">${skip?'⬜':ok?'✅':'❌'}<span class="cat-badge">${q.category}</span><span style="font-size:11px;color:#64748b;">第 ${i+1} 题</span></div>
+    ${q.image?`<img class="q-img" src="${q.image}" alt="">`:''}
+    <div style="font-size:14px;font-weight:600;color:#e2e8f0;margin-bottom:12px;line-height:1.7;">${q.question}</div>
+    ${optsH}
+    ${q.explanation?`<div style="margin-top:8px;font-size:12px;color:#7dd3fc;background:rgba(56,189,248,0.07);border:1px solid rgba(56,189,248,0.15);border-radius:8px;padding:9px 13px;line-height:1.7;">💡 ${q.explanation}</div>`:''}
+    ${skip?'<div style="margin-top:8px;font-size:12px;color:#64748b;">⬜ 本题未作答</div>':''}
+  </div>`;
+  det.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function renderReview(container,mode){
+  let items=QS.questions.map((q,i)=>({q,i,chosen:QS.answers[i]}));
+  if(mode==='wrong') items=items.filter(a=>a.chosen!==undefined&&a.chosen!==a.q.answer);
+  if(!items.length){container.innerHTML=`<div style="text-align:center;padding:28px;color:#64748b;font-size:13px;">${mode==='wrong'?'🎉 没有错题，全部答对！':'暂无数据'}</div>`;return;}
+  container.innerHTML='';
+  items.forEach(({q,i,chosen})=>{
+    const skip=chosen===undefined,ok=!skip&&chosen===q.answer;
+    const optsH=q.options.map((opt,oi)=>{
+      let bg='rgba(255,255,255,0.03)',bd='rgba(255,255,255,0.08)',co='#94a3b8',mk='';
+      if(oi===q.answer){bg='rgba(16,185,129,0.12)';bd='rgba(16,185,129,0.3)';co='#6ee7b7';mk='✓ 正确';}
+      if(oi===chosen&&!ok){bg='rgba(239,68,68,0.12)';bd='rgba(239,68,68,0.3)';co='#fca5a5';mk='✗ 你选了';}
+      return `<div style="padding:8px 12px;border-radius:8px;font-size:12px;background:${bg};border:1px solid ${bd};color:${co};display:flex;align-items:center;gap:7px;margin-bottom:5px;"><span style="font-weight:700;opacity:0.7">${OL[oi]}.</span><span style="flex:1">${opt}</span>${mk?`<span style="font-size:10px;white-space:nowrap">${mk}</span>`:''}</div>`;
+    }).join('');
+    const div=document.createElement('div');
+    div.className=`review-item ${skip?'ri-skip':ok?'ri-correct':'ri-wrong'}`;
+    div.innerHTML=`<div style="display:flex;align-items:center;gap:7px;margin-bottom:10px;">${skip?'⬜':ok?'✅':'❌'}<span class="cat-badge">${q.category}</span><span style="font-size:11px;color:#64748b;">第 ${i+1} 题</span></div>
+      ${q.image?`<img class="q-img" src="${q.image}" alt="">`:''}
+      <div style="font-size:14px;font-weight:600;color:#e2e8f0;margin-bottom:12px;line-height:1.7;">${q.question}</div>
+      ${optsH}
+      ${q.explanation?`<div style="margin-top:8px;font-size:12px;color:#7dd3fc;background:rgba(56,189,248,0.07);border:1px solid rgba(56,189,248,0.15);border-radius:8px;padding:9px 13px;line-height:1.7;">💡 ${q.explanation}</div>`:''}
+      ${skip?'<div style="margin-top:8px;font-size:12px;color:#64748b;">⬜ 本题未作答</div>':''}`;
+    container.appendChild(div);
+  });
+}
+
+function resetQuiz(){
+  el('quiz-finished').classList.add('hidden');
+  el('quiz-setup').classList.remove('hidden');
+  renderQuizSetup();
+}
+
+// ==================== BANK ====================
+let bankFilter='全部';
+function renderBank(){
+  const search=el('bank-search').value.toLowerCase();
+  // Filter buttons use categories list (managed) + 全部
+  const cats=['全部',...categories];
+  const fd=el('bank-cat-filter');
+  fd.innerHTML='';
+  cats.forEach(c=>{
+    const b=document.createElement('button');
+    b.className='btn-tag'+(bankFilter===c?' active':'');
+    b.textContent=c;
+    b.onclick=()=>{bankFilter=c;renderBank();};
+    fd.appendChild(b);
+  });
+  // Filter questions: if bankFilter is a managed category, filter by it
+  // If bankFilter='全部', show all questions
+  const filtered=questions.filter(q=>{
+    const matchCat=bankFilter==='全部'||q.category===bankFilter;
+    const matchText=!search||q.question.toLowerCase().includes(search)||q.category.toLowerCase().includes(search);
+    return matchCat&&matchText;
+  });
+  el('bank-count').textContent=`找到 ${filtered.length} 道题目`;
+  const list=el('bank-list');
+  list.innerHTML='';
+  if(!filtered.length){list.innerHTML='<div style="text-align:center;color:#475569;padding:36px 0;font-size:14px">暂无相关题目</div>';return;}
+  // 按分类分别计数
+  const catCounters={};
+  filtered.forEach(q=>{
+    const item=document.createElement('div');
+    item.className='qbank-item';
+    const optCells=q.options.map((opt,i)=>`<div class="opt-cell ${i===q.answer?'correct-opt':''}"><span style="font-weight:700;opacity:0.7">${OL[i]}.</span><span style="flex:1;margin-left:4px;">${opt}</span>${i===q.answer?'<span>✓</span>':''}</div>`).join('');
+    if(catCounters[q.category]===undefined)catCounters[q.category]=0;
+    catCounters[q.category]++;
+    const catNo=catCounters[q.category];
+    // Build entirely via innerHTML, use data-id for delete
+    item.innerHTML=`
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="display:flex;align-items:center;gap:7px;">
+          <span class="cat-badge">${q.category}</span>
+          <span style="font-size:11px;color:#64748b;">No.${catNo}</span>
+        </div>
+        <div style="display:flex;gap:6px;">
+          <button class="btn-secondary" style="padding:4px 11px;font-size:12px;" data-editid="${q.id}">✏️ 编辑</button>
+          <button class="btn-danger" data-qid="${q.id}">删除</button>
+        </div>
+      </div>
+      ${q.image?`<img class="q-img" src="${q.image}" alt="">`:''}
+      <div style="font-size:14px;font-weight:600;color:#e2e8f0;margin-bottom:10px;line-height:1.5;">${q.question}</div>
+      <div class="opt-grid">${optCells}</div>
+      ${q.explanation?`<div style="margin-top:8px;font-size:12px;color:#64748b;line-height:1.6;">💡 ${q.explanation}</div>`:''}`;
+    item.querySelector('[data-qid]').addEventListener('click',function(){deleteQuestion(Number(this.dataset.qid));});
+    item.querySelector('[data-editid]').addEventListener('click',function(){openEditModal(Number(this.dataset.editid));});
+    list.appendChild(item);
+  });
+}
+function deleteQuestion(id){
+  if(!confirm('确认删除这道题目？'))return;
+  questions=questions.filter(q=>q.id!==id);
+  saveData();updateCount();renderBank();
+}
+
+// ==================== EDIT QUESTION ====================
+let editingId=null;
+let editAnswer=0;
+let editImgBase64='';
+
+function openEditModal(id){
+  const q=questions.find(x=>x.id===id);
+  if(!q)return;
+  editingId=id;
+  editAnswer=q.answer;
+  editImgBase64=q.image||'';
+
+  el('edit-cat').value=q.category||'';
+  el('edit-question').value=q.question||'';
+  el('edit-explanation').value=q.explanation||'';
+  el('edit-success').classList.add('hidden');
+  el('edit-error').classList.add('hidden');
+
+  // render quick cats
+  const qc=el('edit-quick-cats');
+  qc.innerHTML='';
+  categories.forEach(cat=>{
+    const b=document.createElement('button');
+    b.className='btn-tag';
+    b.textContent=cat;
+    b.style.cssText='font-size:12px;padding:5px 14px;';
+    b.addEventListener('click',()=>{
+      el('edit-cat').value=cat;
+      qc.querySelectorAll('button').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+    });
+    if(cat===q.category)b.classList.add('active');
+    qc.appendChild(b);
+  });
+
+  // render options
+  renderEditOptions(q.options);
+
+  // image
+  if(q.image){
+    el('edit-img-preview').src=q.image;
+    el('edit-img-placeholder').classList.add('hidden');
+    el('edit-img-preview-wrap').classList.remove('hidden');
+  } else {
+    el('edit-img-preview').src='';
+    el('edit-img-placeholder').classList.remove('hidden');
+    el('edit-img-preview-wrap').classList.add('hidden');
+  }
+
+  el('edit-modal').style.display='block';
+  document.body.style.overflow='hidden';
+}
+
+function closeEditModal(){
+  el('edit-modal').style.display='none';
+  document.body.style.overflow='';
+  editingId=null;
+}
+
+// Close on backdrop click
+el('edit-modal').addEventListener('click',function(e){
+  if(e.target===this)closeEditModal();
+});
+
+function renderEditOptions(optVals){
+  const c=el('edit-options-form');
+  c.innerHTML='';
+  OL.forEach((lbl,i)=>{
+    const row=document.createElement('div');
+    row.style.cssText='display:flex;gap:8px;margin-bottom:8px;align-items:center;';
+    const btn=document.createElement('button');
+    const isAns=editAnswer===i;
+    btn.style.cssText=`width:30px;height:30px;border-radius:50%;border:2px solid;flex-shrink:0;cursor:pointer;font-size:12px;font-weight:700;transition:all 0.2s;background:${isAns?'rgba(16,185,129,0.2)':'transparent'};border-color:${isAns?'#10b981':'rgba(99,102,241,0.4)'};color:${isAns?'#6ee7b7':'#6366f1'};`;
+    btn.textContent=lbl;
+    btn.onclick=()=>{
+      // save current opt values
+      const vals=OL.map((_,j)=>(el('edit-opt-'+j)||{value:''}).value);
+      editAnswer=i;
+      renderEditOptions(vals);
+    };
+    const inp=document.createElement('input');
+    inp.className='input-field';
+    inp.id='edit-opt-'+i;
+    inp.placeholder='选项 '+lbl;
+    inp.style.cssText=`flex:1;border-color:${isAns?'rgba(16,185,129,0.4)':'rgba(99,102,241,0.2)'};`;
+    inp.value=(optVals&&optVals[i]!==undefined)?optVals[i]:'';
+    row.appendChild(btn);row.appendChild(inp);c.appendChild(row);
+  });
+}
+
+function handleEditImgUpload(e){
+  const file=e.target.files[0];if(!file)return;
+  if(!file.type.startsWith('image/')){alert('请选择图片文件');return;}
+  if(file.size>4*1024*1024){alert('图片不能超过 4MB');return;}
+  const reader=new FileReader();
+  reader.onload=function(ev){
+    editImgBase64=ev.target.result;
+    el('edit-img-preview').src=editImgBase64;
+    el('edit-img-placeholder').classList.add('hidden');
+    el('edit-img-preview-wrap').classList.remove('hidden');
+  };
+  reader.readAsDataURL(file);
+  e.target.value='';
+}
+
+function removeEditImg(e){
+  e.stopPropagation();
+  editImgBase64='';
+  el('edit-img-preview').src='';
+  el('edit-img-preview-wrap').classList.add('hidden');
+  el('edit-img-placeholder').classList.remove('hidden');
+  el('edit-img-input').value='';
+}
+
+function submitEdit(){
+  if(!editingId)return;
+  const cat=el('edit-cat').value.trim();
+  const question=el('edit-question').value.trim();
+  const opts=OL.map((_,i)=>(el('edit-opt-'+i)||{value:''}).value.trim());
+  const explanation=el('edit-explanation').value.trim();
+  el('edit-error').classList.add('hidden');
+  el('edit-success').classList.add('hidden');
+  if(!cat){el('edit-error').textContent='⚠️ 请填写题目分类';el('edit-error').classList.remove('hidden');return;}
+  if(opts.some(o=>!o)){el('edit-error').textContent='⚠️ 请填写所有选项';el('edit-error').classList.remove('hidden');return;}
+  const idx=questions.findIndex(x=>x.id===editingId);
+  if(idx<0){el('edit-error').textContent='⚠️ 未找到题目';el('edit-error').classList.remove('hidden');return;}
+  questions[idx]={...questions[idx],category:cat,question,image:editImgBase64,options:opts,answer:editAnswer,explanation};
+  if(!categories.includes(cat))categories.push(cat);
+  saveData();updateCount();
+  el('edit-success').classList.remove('hidden');
+  setTimeout(()=>{closeEditModal();renderBank();},900);
+}
+
+
+
+// ==================== CATEGORIES ====================
+// categories array = single source of truth (NOT derived from questions)
+function renderCatMgr(){
+  const list=el('cat-list');
+  list.innerHTML='';
+  if(!categories.length){
+    list.innerHTML='<div style="color:#64748b;font-size:13px;padding:8px 0;">暂无分类，请添加</div>';
+    return;
+  }
+  categories.forEach(c=>{
+    const count=questions.filter(q=>q.category===c).length;
+    const row=document.createElement('div');
+    row.className='cat-manage-item';
+    const info=document.createElement('div');
+    info.innerHTML=`<span style="color:#e2e8f0;font-size:13px;font-weight:600;">${c}</span><span style="color:#64748b;font-size:11px;margin-left:10px;">${count} 道题</span>`;
+    const btn=document.createElement('button');
+    btn.className='btn-danger';
+    btn.textContent='删除';
+    btn.addEventListener('click',()=>deleteCategory(c));
+    row.appendChild(info);row.appendChild(btn);
+    list.appendChild(row);
+  });
+}
+function addCategory(){
+  const val=el('new-cat-input').value.trim();
+  const msg=el('cat-mgr-msg');
+  if(!val){msg.style.color='#fca5a5';msg.textContent='⚠️ 请输入分类名称';return;}
+  if(categories.includes(val)){msg.style.color='#fca5a5';msg.textContent='⚠️ 该分类已存在';return;}
+  categories.push(val);
+  el('new-cat-input').value='';
+  saveData();
+  msg.style.color='#6ee7b7';msg.textContent='✅ 分类添加成功';
+  setTimeout(()=>msg.textContent='',2000);
+  renderCatMgr();renderQuickCats();
+}
+
+// ==================== MATERIALS ====================
+function renderCatSelectForMat(){
+  const sel=el('mat-cat-select');
+  if(!sel)return;
+  const cur=sel.value;
+  sel.innerHTML='<option value="">-- 请选择分类 --</option>';
+  categories.forEach(c=>{
+    const o=document.createElement('option');
+    o.value=c;o.textContent=c;
+    if(c===cur)o.selected=true;
+    sel.appendChild(o);
+  });
+}
+
+function renderMatList(){
+  const cat=el('mat-cat-select').value;
+  const list=el('mat-list');
+  el('mat-add-form').classList.add('hidden');
+  if(!cat){list.innerHTML='';return;}
+  const mats=materials[cat]||[];
+  if(!mats.length){
+    list.innerHTML='<div style="font-size:13px;color:#475569;padding:8px 0;">暂无材料背景，点击下方添加</div>';
+    return;
+  }
+  list.innerHTML='';
+  mats.forEach((m,i)=>{
+    const d=document.createElement('div');
+    d.style.cssText='background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.2);border-radius:10px;padding:12px 14px;margin-bottom:8px;';
+    d.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
+      <span style="font-size:13px;font-weight:600;color:#38bdf8;">第 ${m.from}–${m.to} 题</span>
+      <div style="display:flex;gap:6px;">
+        <button class="btn-secondary" style="padding:3px 10px;font-size:11px;" onclick="editMat('${cat}',${i})">✏️ 编辑</button>
+        <button class="btn-danger" style="padding:3px 10px;font-size:11px;" onclick="deleteMat('${cat}',${i})">删除</button>
+      </div>
+    </div>
+    <div style="font-size:12px;color:#7dd3fc;white-space:pre-wrap;line-height:1.7;max-height:80px;overflow:hidden;text-overflow:ellipsis;">${m.text.length>120?m.text.slice(0,120)+'…':m.text}</div>`;
+    list.appendChild(d);
+  });
+}
+
+let editingMatIdx=null;
+function showMatAddForm(){
+  editingMatIdx=null;
+  el('mat-from').value='';
+  el('mat-to').value='';
+  el('mat-text').value='';
+  el('mat-msg').textContent='';
+  el('mat-add-form').classList.remove('hidden');
+  el('mat-add-form').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function editMat(cat,idx){
+  const m=materials[cat][idx];
+  editingMatIdx=idx;
+  el('mat-from').value=m.from;
+  el('mat-to').value=m.to;
+  el('mat-text').value=m.text;
+  el('mat-msg').textContent='';
+  el('mat-add-form').classList.remove('hidden');
+  el('mat-add-form').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function deleteMat(cat,idx){
+  if(!confirm('确认删除该材料背景？'))return;
+  materials[cat].splice(idx,1);
+  if(!materials[cat].length)delete materials[cat];
+  saveData();
+  renderMatList();
+}
+
+function submitMat(){
+  const cat=el('mat-cat-select').value;
+  const from=parseInt(el('mat-from').value);
+  const to=parseInt(el('mat-to').value);
+  const text=el('mat-text').value.trim();
+  const msg=el('mat-msg');
+  if(!cat){msg.style.color='#fca5a5';msg.textContent='⚠️ 请先选择分类';return;}
+  if(!from||!to||from<1||to<1){msg.style.color='#fca5a5';msg.textContent='⚠️ 请填写有效的起止题号';return;}
+  if(from>to){msg.style.color='#fca5a5';msg.textContent='⚠️ 起始题号不能大于结束题号';return;}
+  if(!text){msg.style.color='#fca5a5';msg.textContent='⚠️ 请填写材料内容';return;}
+  if(!materials[cat])materials[cat]=[];
+  const entry={from,to,text};
+  if(editingMatIdx!==null){
+    materials[cat][editingMatIdx]=entry;
+  } else {
+    materials[cat].push(entry);
+    // sort by from
+    materials[cat].sort((a,b)=>a.from-b.from);
+  }
+  saveData();
+  editingMatIdx=null;
+  el('mat-add-form').classList.add('hidden');
+  msg.style.color='#6ee7b7';msg.textContent='✅ 保存成功';
+  setTimeout(()=>msg.textContent='',2000);
+  renderMatList();
+}
+
+function deleteCategory(cat){
+  const count=questions.filter(q=>q.category===cat).length;
+  const msg=count>0?`分类「${cat}」下有 ${count} 道题目，删除分类后这些题仍保留在题库中。确认删除？`:`确认删除分类「${cat}」？`;
+  if(!confirm(msg))return;
+  // Remove from categories array — this is permanent, questions keep their category string
+  categories=categories.filter(c=>c!==cat);
+  saveData();
+  renderCatMgr();renderQuickCats();
+}
+
+// ==================== ADD QUESTION ====================
+let formAnswer=0;
+let formImgBase64=''; // base64 string of current image
+
+function triggerImgInput(){
+  // clicks handled by the file input's own click
+}
+
+function loadImgFile(file){
+  if(!file||!file.type.startsWith('image/')){alert('请选择图片文件');return;}
+  if(file.size>4*1024*1024){alert('图片不能超过 4MB，请压缩后再上传');return;}
+  const reader=new FileReader();
+  reader.onload=function(ev){
+    formImgBase64=ev.target.result;
+    el('img-preview').src=formImgBase64;
+    el('img-upload-placeholder').classList.add('hidden');
+    el('img-preview-wrap').classList.remove('hidden');
+  };
+  reader.readAsDataURL(file);
+}
+
+function initImgUploadArea(){
+  const area=el('img-upload-area');
+  if(!area||area._initDone)return;
+  area._initDone=true;
+
+  // Drag-over highlight
+  area.addEventListener('dragover',function(e){
+    e.preventDefault();e.stopPropagation();
+    area.style.borderColor='rgba(99,102,241,0.9)';
+    area.style.background='rgba(99,102,241,0.15)';
+  });
+  area.addEventListener('dragleave',function(e){
+    e.preventDefault();e.stopPropagation();
+    area.style.borderColor='';area.style.background='';
+  });
+  area.addEventListener('drop',function(e){
+    e.preventDefault();e.stopPropagation();
+    area.style.borderColor='';area.style.background='';
+    const file=e.dataTransfer.files[0];
+    if(file)loadImgFile(file);
+  });
+}
+
+// Global paste listener: paste image anywhere on the add-question tab
+document.addEventListener('paste',function(e){
+  // Only active when add tab is visible
+  const addTab=el('tab-add');
+  if(!addTab||addTab.classList.contains('hidden'))return;
+  const items=e.clipboardData&&e.clipboardData.items;
+  if(!items)return;
+  for(let i=0;i<items.length;i++){
+    if(items[i].type.startsWith('image/')){
+      e.preventDefault();
+      const file=items[i].getAsFile();
+      if(file)loadImgFile(file);
+      break;
+    }
+  }
+});
+function handleImgUpload(e){
+  const file=e.target.files[0];
+  if(!file)return;
+  loadImgFile(file);
+  e.target.value='';
+}
+function removeImg(e){
+  e.stopPropagation();
+  formImgBase64='';
+  el('img-preview').src='';
+  el('img-preview-wrap').classList.add('hidden');
+  el('img-upload-placeholder').classList.remove('hidden');
+  el('form-img-input').value='';
+}
+function resetImgForm(){
+  formImgBase64='';
+  el('img-preview').src='';
+  el('img-preview-wrap').classList.add('hidden');
+  el('img-upload-placeholder').classList.remove('hidden');
+  el('form-img-input').value='';
+}
+
+function renderOptionsForm(){
+  const c=el('options-form');
+  c.innerHTML='';
+  OL.forEach((lbl,i)=>{
+    const row=document.createElement('div');
+    row.style.cssText='display:flex;gap:8px;margin-bottom:8px;align-items:center;';
+    const btn=document.createElement('button');
+    btn.style.cssText=`width:30px;height:30px;border-radius:50%;border:2px solid;flex-shrink:0;cursor:pointer;font-size:12px;font-weight:700;transition:all 0.2s;background:${formAnswer===i?'rgba(16,185,129,0.2)':'transparent'};border-color:${formAnswer===i?'#10b981':'rgba(99,102,241,0.4)'};color:${formAnswer===i?'#6ee7b7':'#6366f1'};`;
+    btn.textContent=lbl;
+    btn.onclick=()=>{formAnswer=i;renderOptionsForm();restoreOptValues();};
+    const inp=document.createElement('input');
+    inp.className='input-field';
+    inp.id=`opt-${i}`;
+    inp.placeholder=i===0?`选项 A （可粘贴整行如：A. xxx  B. xxx  C. xxx  D. xxx）`:`选项 ${lbl}`;
+    inp.style.cssText=`flex:1;border-color:${formAnswer===i?'rgba(16,185,129,0.4)':'rgba(99,102,241,0.2)'};`;
+    if(i===0){
+      inp.addEventListener('paste',function(e){
+        const pasted=(e.clipboardData||window.clipboardData).getData('text').trim();
+        // Check if it looks like inline options: contains B. or B、 etc
+        if(/[ABCD][\.。\)）、：:]/i.test(pasted)&&pasted.match(/[ABCD][\.。\)）、：:]/gi)?.length>=2){
+          e.preventDefault();
+          const parts=pasted.split(/(?=[ABCD][\.。\)）、：:])/i).map(s=>s.trim()).filter(Boolean);
+          parts.forEach(p=>{
+            const m=p.match(/^([ABCD])[\.。\)）、：:]\s*(.*)/i);
+            if(m){const idx2=OL.indexOf(m[1].toUpperCase());if(idx2>=0){const t=document.getElementById('opt-'+idx2);if(t)t.value=m[2].trim();}}
+          });
+        }
+      });
+    }
+    row.appendChild(btn);row.appendChild(inp);c.appendChild(row);
+  });
+}
+function restoreOptValues(){/* values preserved by re-reading from DOM before re-render isn't needed since we store in input elements */}
+
+function renderQuickCats(){
+  const c=el('quick-cats');
+  if(!c)return;
+  c.innerHTML='';
+  if(!categories.length){
+    c.innerHTML='<span style="font-size:11px;color:#475569;">暂无分类</span>';
+    return;
+  }
+  categories.forEach(cat=>{
+    const b=document.createElement('button');
+    b.className='btn-tag';
+    b.textContent=cat;
+    b.style.cssText='font-size:12px;padding:5px 14px;';
+    b.addEventListener('click',()=>{
+      el('form-cat').value=cat;
+      c.querySelectorAll('button').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+    });
+    c.appendChild(b);
+  });
+}
+
+// ==================== SMART PASTE ====================
+
+
+
+
+
+
+
+
+function splitInlineOpts(){
+  const raw=el('opts-inline-input').value.trim();
+  if(!raw){return;}
+  // Split on A/B/C/D markers
+  const parts=raw.split(/(?=[ABCD][．\.。\)）、：:\s])/i).map(s=>s.trim()).filter(Boolean);
+  const opts=['','','',''];
+  parts.forEach(p=>{
+    const m=p.match(/^([ABCD])[．\.。\)）、：:\s]+(.+)/i);
+    if(m){const idx=OL.indexOf(m[1].toUpperCase());if(idx>=0)opts[idx]=m[2].trim();}
+  });
+  if(!opts.some(o=>o)){alert('未能识别选项，请确认格式如：A．xxx B．xxx C．xxx D．xxx');return;}
+  renderOptionsForm();
+  opts.forEach((opt,i)=>{const inp=el(`opt-${i}`);if(inp)inp.value=opt;});
+  el('opts-inline-input').value='';
+}
+
+function submitAdd(){
+  const cat=el('form-cat').value.trim();
+  const question=el('form-question').value.trim();
+  const opts=[0,1,2,3].map(i=>(el(`opt-${i}`)||{value:''}).value.trim());
+  const explanation=el('form-explanation').value.trim();
+  el('add-error').classList.add('hidden');el('add-success').classList.add('hidden');
+  if(!cat){el('add-error').textContent='⚠️ 请填写题目分类';el('add-error').classList.remove('hidden');return;}
+  if(opts.some(o=>!o)){el('add-error').textContent='⚠️ 请填写所有选项';el('add-error').classList.remove('hidden');return;}
+  const imgData=formImgBase64||'';
+  questions.push({id:Date.now(),category:cat,question,image:imgData,options:opts,answer:formAnswer,explanation});
+  // Auto-add category to managed list if new
+  if(!categories.includes(cat))categories.push(cat);
+  saveData();updateCount();
+  // Reset
+  el('form-cat').value='';el('form-question').value='';el('form-explanation').value='';
+  el('paste-input').value='';el('parse-result').classList.add('hidden');
+  formAnswer=0;resetImgForm();renderOptionsForm();renderQuickCats();
+  el('add-success').classList.remove('hidden');
+  setTimeout(()=>el('add-success').classList.add('hidden'),2500);
+}
+
+// ==================== SYNC ====================
+function renderSyncStats(){
+  el('sync-stats').innerHTML=`
+    <div class="stat-card"><div class="stat-num-big">${questions.length}</div><div class="stat-label">题目总数</div></div>
+    <div class="stat-card"><div class="stat-num-big">${categories.length}</div><div class="stat-label">分类数</div></div>
+    <div class="stat-card"><div class="stat-num-big">${questions.filter(q=>q.explanation).length}</div><div class="stat-label">含解析</div></div>`;
+}
+function getExport(){return{version:3,exportTime:new Date().toISOString(),questions,categories,materials};}
+function exportJSON(){
+  const blob=new Blob([JSON.stringify(getExport(),null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=`题库_${new Date().toLocaleDateString('zh-CN').replace(/\//g,'-')}.json`;
+  a.click();URL.revokeObjectURL(a.href);
+}
+function genShareCode(){
+  const code='QUIZAPP::'+btoa(unescape(encodeURIComponent(JSON.stringify(getExport()))));
+  el('share-code').textContent=code;
+  el('share-area').classList.remove('hidden');
+}
+function copyCode(){
+  const text=el('share-code').textContent;
+  const tip=el('copy-tip');
+  const done=()=>{tip.textContent='✅ 已复制！';tip.style.opacity='1';setTimeout(()=>tip.style.opacity='0',2000);};
+  navigator.clipboard?navigator.clipboard.writeText(text).then(done).catch(()=>{legacyCopy(text);done();}):legacyCopy(text)||done();
+}
+function legacyCopy(t){const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);}
+
+let mergeMode='merge',pendingImport=null;
+function switchImportTab(tab){
+  el('import-file-panel').classList.toggle('hidden',tab!=='file');
+  el('import-code-panel').classList.toggle('hidden',tab!=='code');
+  el('itab-file').classList.toggle('active',tab==='file');
+  el('itab-code').classList.toggle('active',tab==='code');
+  el('import-preview').classList.add('hidden');
+  el('import-result').classList.add('hidden');
+}
+function setMergeMode(m){
+  mergeMode=m;
+  el('merge-btn-merge').classList.toggle('active',m==='merge');
+  el('merge-btn-replace').classList.toggle('active',m==='replace');
+}
+function handleFileImport(e){
+  const file=e.target.files[0];if(!file)return;
+  const r=new FileReader();r.onload=ev=>parseImport(ev.target.result);r.readAsText(file);
+}
+function handleCodeImport(){
+  const code=el('import-code-input').value.trim();
+  if(!code){showImportResult('error','⚠️ 请粘贴分享码');return;}
+  if(!code.startsWith('QUIZAPP::')){showImportResult('error','⚠️ 无效分享码格式');return;}
+  try{parseImport(decodeURIComponent(escape(atob(code.replace('QUIZAPP::','')))));}
+  catch(e){showImportResult('error','⚠️ 分享码解析失败');}
+}
+function parseImport(jsonStr){
+  try{
+    const data=JSON.parse(jsonStr);
+    if(!data.questions||!Array.isArray(data.questions))throw new Error();
+    pendingImport=data;
+    el('import-preview-title').textContent=`📦 检测到 ${data.questions.length} 道题目，${(data.categories||[]).length} 个分类`;
+    el('import-preview-desc').textContent=`导出时间：${data.exportTime?new Date(data.exportTime).toLocaleString('zh-CN'):'未知'}`;
+    el('import-preview').classList.remove('hidden');
+    el('import-result').classList.add('hidden');
+  }catch(e){showImportResult('error','⚠️ 文件格式有误');}
+}
+function confirmImport(){
+  if(!pendingImport)return;
+  const inQ=pendingImport.questions||[],inC=pendingImport.categories||[];
+  const inM=pendingImport.materials||{};
+  if(mergeMode==='replace'){questions=inQ;categories=inC;materials=inM;}
+  else{
+    const existIds=new Set(questions.map(q=>q.id));
+    questions=[...questions,...inQ.map(q=>existIds.has(q.id)?{...q,id:Date.now()+Math.floor(Math.random()*9999)}:q)];
+    inC.forEach(c=>{if(!categories.includes(c))categories.push(c);});
+    Object.entries(inM).forEach(([cat,mats])=>{if(!materials[cat])materials[cat]=mats;else materials[cat]=[...materials[cat],...mats];});
+  }
+  saveData();updateCount();renderSyncStats();
+  pendingImport=null;
+  el('import-preview').classList.add('hidden');
+  el('import-file-input').value='';
+  el('import-code-input').value='';
+  showImportResult('success',`✅ 导入成功！题库现共 ${questions.length} 道题目`);
+}
+function cancelImport(){pendingImport=null;el('import-preview').classList.add('hidden');el('import-file-input').value='';}
+function showImportResult(type,msg){
+  const e2=el('import-result');
+  e2.className=type==='success'?'alert-success':'alert-error';
+  e2.textContent=msg;e2.classList.remove('hidden');
+  setTimeout(()=>e2.classList.add('hidden'),4000);
+}
+function clearAllData(){
+  if(!confirm('确认清空全部数据？此操作不可恢复！'))return;
+  if(!confirm('再次确认：清空后将无法恢复。'))return;
+  questions=[];
+  categories=[];
+  materials={};
+  try{localStorage.setItem(SK_Q,'[]');localStorage.setItem(SK_C,'[]');localStorage.setItem(SK_M,'{}');}catch(e){}
+  updateCount();
+  renderSyncStats();
+  renderQuizSetup();
+  renderCatMgr();
+  renderQuickCats();
+  // show tip directly
+  const tip=document.getElementById('save-tip');
+  tip.textContent='🗑️ 已清空';tip.classList.add('show');
+  setTimeout(()=>{tip.classList.remove('show');tip.textContent='💾 已自动保存';},2000);
+}
+
+// ==================== INIT ====================
+updateCount();
+renderQuizSetup();
+renderOptionsForm();
+renderQuickCats();
+</script>
+
+<div id="pwa-install-tip" style="display:none;position:fixed;bottom:calc(16px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);background:rgba(99,102,241,0.95);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:14px 18px;z-index:9999;max-width:320px;width:calc(100% - 40px);box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+  <div style="display:flex;align-items:flex-start;gap:12px;">
+    <div style="font-size:28px;flex-shrink:0;">📲</div>
+    <div style="flex:1;">
+      <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;">添加到主屏幕</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.8);line-height:1.5;">点击底部 <span style="background:rgba(255,255,255,0.2);padding:1px 6px;border-radius:4px;">分享</span> 按钮，选择「添加到主屏幕」即可像 App 一样使用</div>
+    </div>
+    <button onclick="document.getElementById('pwa-install-tip').style.display='none';localStorage.setItem('pwa_tip_closed','1')" style="background:none;border:none;color:rgba(255,255,255,0.6);font-size:18px;cursor:pointer;padding:0;flex-shrink:0;line-height:1;">✕</button>
+  </div>
+</div>
+
+<script>
+// PWA 安装提示（iOS Safari 专用）
+(function(){
+  const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
+  const isInStandaloneMode=('standalone' in navigator)&&navigator.standalone;
+  const isClosed=localStorage.getItem('pwa_tip_closed');
+  if(isIOS&&!isInStandaloneMode&&!isClosed){
+    setTimeout(()=>{
+      const tip=document.getElementById('pwa-install-tip');
+      if(tip)tip.style.display='block';
+    },2500);
+  }
+})();
+</script>
+
+</body>
+</html>
